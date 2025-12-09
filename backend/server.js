@@ -190,4 +190,10 @@ app.post("/api/download-pdf", (req, res) => {
 // -----------------------------------------------------
 // 🚀 START SERVER
 // -----------------------------------------------------
-app.listen(4000, () => console.log("Backend running on port 4000"));
+// -----------------------------------------------------
+// 🚀 START SERVER (Render Compatible)
+// -----------------------------------------------------
+const PORT = process.env.PORT || 4000;
+
+app.listen(PORT, () => console.log(`Backend running on port ${PORT}`));
+
