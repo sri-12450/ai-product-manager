@@ -1,0 +1,42 @@
+[
+  {
+    "name": "Kidney beans",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Red_Rajma_BNC.jpg/330px-Red_Rajma_BNC.jpg",
+    "description": "• Kidney beans are a type of legume commonly used in various cuisines, particularly in Latin American, Indian, and Middle Eastern cooking.\n• They are often used in dishes such as chili con carne, stews, and curries, adding texture and flavor to the recipes.\n• Kidney beans can also be used in salads, dips, and as a topping for tacos and other Mexican-inspired dishes."
+  },
+  {
+    "name": "broccoli",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Broccoli_and_cross_section_edit.jpg/330px-Broccoli_and_cross_section_edit.jpg",
+    "description": "• Broccoli is a versatile vegetable often used in a variety of dishes, including soups, salads, and stir-fries.\n• Its florets can be steamed, roasted, or sautéed as a side dish or added to main courses.\n• It's also a key ingredient in many Italian and Asian recipes, such as pasta sauces and stir-fry dishes."
+  },
+  {
+    "name": "Garam Masala",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/58/Garammasalaphoto.jpg/330px-Garammasalaphoto.jpg",
+    "description": "• Garam Masala is a blend of ground spices commonly used in Indian and other South Asian cuisines to add warmth and depth to various dishes.\n• It is typically added towards the end of cooking to preserve its aromatic flavor and is often used in curries, stews, and other savory recipes.\n• Garam Masala can be adjusted to suit individual tastes, with some recipes calling for a light sprinkle or others requiring a more generous amount."
+  },
+  {
+    "name": "Urad dal",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Black_gram.jpg/330px-Black_gram.jpg",
+    "description": "• Urad dal is a type of split black gram commonly used in Indian cuisine, particularly in the preparation of idlis, dosas, and vadas.\n• It is often used in combination with rice to make fermented batter, which is then cooked into various dishes.\n• Urad dal can also be used to make a variety of snacks, such as papads and pakoras, and is often added to soups and stews for added flavor and texture."
+  },
+  {
+    "name": "Nutmeg",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Biji_Pala_Bubuk.jpg/330px-Biji_Pala_Bubuk.jpg",
+    "description": "• Nutmeg is a popular spice commonly used in baking and cooking, particularly in sweet dishes such as pies, cakes, and custards.\n• It is also used to add warmth and depth to savory dishes like stews, soups, and meat recipes.\n• Whole nutmeg seeds can be grated over food for an extra burst of flavor."
+  },
+  {
+    "name": "Rice",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/20201102.Hengnan.Hybrid_rice_Sanyou-1.6.jpg/330px-20201102.Hengnan.Hybrid_rice_Sanyou-1.6.jpg",
+    "description": "• Rice is a staple food made from the edible starchy grains of the rice plant, commonly used in various cuisines around the world.\n• It is often served alongside other dishes, such as curries, stews, and stir-fries, and can also be used as an ingredient in salads, desserts, and side dishes.\n• With numerous varieties available, including white, brown, jasmine, and basmati, rice is a versatile ingredient in many different types of cooking."
+  },
+  {
+    "name": "Banana",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/de/Bananavarieties.jpg/330px-Bananavarieties.jpg",
+    "description": "• Bananas are a popular fruit often eaten fresh as a sweet snack or used in various desserts.\n• They can be blended into smoothies, used in baked goods, or as a topping for oatmeal or yogurt.\n• Bananas are also a common ingredient in fruit salads and can be grilled or sautéed for added texture."
+  },
+  {
+    "name": "Papaya",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Carica_papaya_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-029.jpg/330px-Carica_papaya_-_K%C3%B6hler%E2%80%93s_Medizinal-Pflanzen-029.jpg",
+    "description": "• Papaya is a tropical fruit often eaten fresh, used in salads, or blended into smoothies.\n• Its juicy pulp and sweet flavor make it a popular ingredient in various desserts and sweet dishes.\n• Papaya is also used in savory recipes, adding a unique flavor and texture to dishes like curries and salsas."
+  }
+]
