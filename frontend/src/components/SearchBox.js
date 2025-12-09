@@ -12,6 +12,9 @@ export default function SearchBox() {
   const [ingDesc, setIngDesc] = useState("");
   const [msg, setMsg] = useState("");
 
+  // Use environment variable for API URL
+  const API = process.env.REACT_APP_API_URL;
+
   // ---------------------------------
   // SEARCH INGREDIENT
   // ---------------------------------
@@ -19,9 +22,7 @@ export default function SearchBox() {
     if (!text.trim()) return;
 
     try {
-      const res = await axios.post("http://localhost:4000/api/search", {
-        text,
-      });
+      const res = await axios.post(`${API}/api/search`, { text });
 
       setResult(res.data);
 
@@ -42,7 +43,7 @@ export default function SearchBox() {
   // ---------------------------------
   const handleAddIngredient = async () => {
     try {
-      const res = await axios.post("http://localhost:4000/api/add", {
+      const res = await axios.post(`${API}/api/add`, {
         name: ingName,
         image: ingImage,
         description: ingDesc,
@@ -70,9 +71,7 @@ export default function SearchBox() {
     if (!window.confirm(`Delete ingredient "${name}"?`)) return;
 
     try {
-      const res = await axios.post("http://localhost:4000/api/delete", {
-        name,
-      });
+      const res = await axios.post(`${API}/api/delete`, { name });
 
       if (res.data.success) {
         alert("Deleted!");
@@ -96,17 +95,20 @@ export default function SearchBox() {
   const handleDownloadPDF = async () => {
     if (!result) return;
 
-    const res = await axios.post(
-      "http://localhost:4000/api/download-pdf",
-      result,
-      { responseType: "blob" }
-    );
+    try {
+      const res = await axios.post(`${API}/api/download-pdf`, result, {
+        responseType: "blob",
+      });
 
-    const url = window.URL.createObjectURL(new Blob([res.data]));
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "ingredient.pdf";
-    a.click();
+      const url = window.URL.createObjectURL(new Blob([res.data]));
+      const a = document.createElement("a");
+      a.href = url;
+      a.download = "ingredient.pdf";
+      a.click();
+    } catch (err) {
+      console.error(err);
+      alert("Failed to download PDF");
+    }
   };
 
   return (
@@ -138,14 +140,14 @@ export default function SearchBox() {
             result.suggestions.map((item, i) => (
               <div key={i} className="item">
                 <h3>{item.name}</h3>
-                <img src={item.image} width="120" alt="" />
+                <img src={item.image} width="120" alt={item.name} />
 
                 <ul>
                   {item.description
                     .split("•")
                     .filter((line) => line.trim() !== "")
-                    .map((line, i) => (
-                      <li key={i}>{line.trim()}</li>
+                    .map((line, idx) => (
+                      <li key={idx}>{line.trim()}</li>
                     ))}
                 </ul>
 
@@ -159,7 +161,7 @@ export default function SearchBox() {
             ))
           )}
 
-          {/* PDF BUTTON HERE */}
+          {/* PDF BUTTON */}
           <button className="pdf-btn" onClick={handleDownloadPDF}>
             Download as PDF
           </button>
