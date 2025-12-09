@@ -1,0 +1,751 @@
+/* ==========================
+   UNIFIED MODERN NEON THEME
+   Teal + Yellow Neon Palette
+=============================*/
+
+:root {
+  /* Primary Colors */
+  --primary: #00ffd5;        /* Neon Teal */
+  --primary-dark: #00c4a5;   /* Darker Teal */
+
+  /* Accent Glow */
+  --accent: #ffff00;         /* Neon Yellow glow */
+
+  /* Text Colors */
+  --text: #ffffff;           /* Main text */
+  --text-muted: #b9e7e7;     /* Placeholder / muted */
+
+  /* Backgrounds */
+  --bg1: #001a1a; 
+  --bg2: #003333;
+  --glass-bg: rgba(0, 255, 213, 0.07);
+  --glass-bg-strong: rgba(0, 255, 213, 0.12);
+
+  /* Shadows */
+  --shadow-color: rgba(0, 255, 213, 0.35);
+
+  /* Inputs */
+  --input-bg: rgba(0, 255, 213, 0.12);
+  --input-bg-focus: rgba(0, 255, 213, 0.22);
+}
+
+/* -------------------------
+   GLOBAL
+-------------------------- */
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  background: linear-gradient(135deg, var(--bg1), var(--bg2));
+  color: var(--text);
+  line-height: 1.6;
+  animation: fadeIn 0.7s ease-in-out;
+}
+
+.container {
+  max-width: 700px;
+  margin: auto;
+  padding: 50px 20px;
+}
+
+/* -------------------------
+   SEARCH SECTION
+-------------------------- */
+.search-box-wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 70px;
+}
+
+.search-box {
+  display: flex;
+  gap: 12px;
+  width: 70%;
+  max-width: 800px;
+  justify-content: center;
+  animation: slideUp 0.6s ease;
+}
+
+.search-box input {
+  flex: 1;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  font-size: 16px;
+  background: var(--input-bg);
+  color: var(--text);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.search-box input::placeholder {
+  color: var(--text-muted);
+}
+
+.search-box input:focus {
+  background: var(--input-bg-focus);
+  box-shadow: 0 0 12px var(--primary);
+  outline: none;
+}
+
+.search-box button {
+  padding: 14px 24px;
+  border: none;
+  border-radius: 14px;
+  background: var(--primary);
+  color: #000;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 12px var(--primary);
+}
+
+.search-box button:hover {
+  transform: translateY(-3px) scale(1.03);
+  background: var(--primary-dark);
+  box-shadow: 0 0 18px var(--accent);
+}
+
+/* -------------------------
+   RESULT BOX / CARDS
+-------------------------- */
+.result-box,
+.card {
+  margin-top: 30px;
+  width: 70%;
+  max-width: 800px;
+  padding: 25px;
+  border-radius: 20px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-bg-strong);
+  backdrop-filter: blur(10px);
+  color: var(--text);
+  box-shadow: 0 14px 40px var(--shadow-color);
+  animation: fadeIn 0.6s ease;
+  transition: all 0.35s ease;
+}
+
+.result-box .item {
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(0,255,213,0.2);
+}
+
+/* -----------------------------------------
+   FIXED IMAGE
+------------------------------------------ */
+.result-box img,
+.card img {
+  display: block;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 14px;
+  margin: 15px auto;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(0,255,213,0.25);
+  transition: 0.3s ease;
+}
+
+.result-box img:hover,
+.card img:hover {
+  transform: scale(1.05);
+}
+
+.card:hover,
+.result-box .item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px var(--shadow-color);
+}
+
+/* -----------------------------------------
+   BULLET POINT DESCRIPTION
+------------------------------------------ */
+.result-box .item p,
+.card p {
+  margin-top: 10px;
+  padding-left: 20px;
+  position: relative;
+  color: #d9fffb;
+  line-height: 1.5;
+}
+
+.result-box .item p::before,
+.card p::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 20px;
+  color: var(--primary);
+}
+
+/* -------------------------
+   ADD INGREDIENT PAGE
+-------------------------- */
+.add-ingredient-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 60px 20px;
+  background: radial-gradient(circle at top left, var(--bg2), var(--bg1));
+  animation: fadeIn 0.7s ease;
+}
+
+.add-box,
+.add-ingredient-box {
+  width: 70%;
+  max-width: 900px;
+  background: var(--glass-bg);
+  border-radius: 22px;
+  padding: 35px;
+  color: var(--text);
+  backdrop-filter: blur(14px);
+  border: 1px solid var(--glass-bg-strong);
+  box-shadow: 0 14px 40px var(--shadow-color);
+  transition: all 0.35s ease;
+  animation: slideUp 0.6s ease;
+}
+
+.add-box:hover,
+.add-ingredient-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 50px var(--shadow-color);
+}
+
+.add-box h2,
+.add-ingredient-box h2 {
+  font-size: 28px;
+  color: var(--primary);
+  font-weight: 700;
+  text-shadow: 0 0 12px var(--primary);
+  margin-bottom: 20px;
+}
+
+.add-box label,
+.add-ingredient-box label {
+  font-weight: 600;
+  font-size: 15px;
+  color: var(--text);
+}
+
+.add-box input,
+.add-box textarea,
+.add-ingredient-box input,
+.add-ingredient-box textarea {
+  width: 100%;
+  padding: 14px;
+  border-radius: 14px;
+  border: none;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  background: var(--input-bg);
+  color: var(--text);
+  font-size: 15px;
+  transition: all 0.3s ease;
+}
+
+.add-box input:focus,
+.add-box textarea:focus,
+.add-ingredient-box input:focus,
+.add-ingredient-box textarea:focus {
+  background: var(--input-bg-focus);
+  box-shadow: 0 0 14px var(--primary);
+  outline: none;
+}
+
+.add-box button,
+.add-ingredient-box button {
+  padding: 15px;
+  width: 200px;
+  background: var(--primary);
+  color: #000;
+  border: none;
+  border-radius: 14px;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.add-box button:hover,
+.add-ingredient-box button:hover {
+  transform: translateY(-3px) scale(1.04);
+  background: var(--primary-dark);
+  box-shadow: 0 10px 25px var(--accent);
+}
+
+.msg {
+  margin-top: 15px;
+  font-size: 16px;
+  color: var(--accent);
+}
+
+/* -------------------------
+   MODAL
+-------------------------- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.4s ease;
+  z-index: 2000;
+}
+
+.modal-box {
+  width: 420px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 25px;
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 25px #00ffc399;
+  animation: slideUp 0.4s ease;
+  color: white;
+}
+
+.modal-box h2 {
+  color: #00ffc3;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.modal-box input,
+.modal-box textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  margin-bottom: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  outline: none;
+}
+
+.add-submit {
+  width: 100%;
+  padding: 12px;
+  background: #00ffc3;
+  border: none;
+  border-radius: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: 0.2s;
+}
+
+.add-submit:hover {
+  background: #00d9a8;
+}
+
+.close-btn {
+  width: 100%;
+  padding: 10px;
+  background: #444;
+  border: none;
+  margin-top: 10px;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.close-btn:hover {
+  background: #666;
+}
+
+/* Add Button (Top) */
+.add-btn {
+  padding: 14px 20px;
+  border-radius: 12px;
+  background: #00ffc3;
+  border: none;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.add-btn:hover {
+  background: #00d9a8;
+}
+
+/* -------------------------
+   ANIMATIONS
+-------------------------- */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.delete-btn {
+  margin-top: 15px;
+  background: #ff3b3b;
+  color: white;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 0 10px #ff3b3b;
+  transition: 0.3s ease;
+}
+
+.delete-btn:hover {
+  background: #ff5555;
+  box-shadow: 0 0 15px #ff5555;
+  transform: translateY(-2px);
+}
+/* ================================
+   ❇ MODERN NEON UI – STYLED FOR YOU
+================================ */
+
+/* Wrapper */
+.search-box-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  color: white;
+  text-align: center;
+  animation: fadeIn 0.6s ease;
+}
+
+/* SEARCH BOX */
+.search-box {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 25px;
+  animation: fadeUp 0.5s ease;
+}
+
+.search-box input {
+  padding: 12px;
+  width: 260px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+  backdrop-filter: blur(4px);
+  outline: none;
+  font-size: 16px;
+  transition: 0.25s ease;
+}
+
+.search-box input:focus {
+  border-color: #00ffc3;
+  box-shadow: 0 0 10px #00ffc3;
+}
+
+.search-box button {
+  padding: 12px 20px;
+  background: #00ffc3;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.25s ease, transform 0.2s ease;
+}
+
+.search-box button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 12px #00ffc3cc;
+}
+
+.add-btn {
+  background: #ff0099;
+  color: #fff;
+}
+
+.add-btn:hover {
+  box-shadow: 0 0 12px #ff0099cc;
+}
+
+/* RESULT BOX */
+.result-box {
+  background: rgba(255, 255, 255, 0.07);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid #ffffff33;
+  animation: fadeIn 0.7s ease;
+}
+
+.item {
+  border: 1px solid #00ffc355;
+  padding: 18px;
+  border-radius: 15px;
+  margin-bottom: 22px;
+  background: rgba(0, 0, 0, 0.35);
+  transition: 0.3s ease;
+}
+
+.item:hover {
+  box-shadow: 0 0 15px #00ffc366;
+  transform: translateY(-3px);
+}
+
+.item img {
+  border-radius: 10px;
+  margin-top: 10px;
+  width: 120px;
+  transition: 0.3s ease;
+}
+
+.item img:hover {
+  transform: scale(1.05);
+}
+
+.delete-btn {
+  background: #ff4444;
+  color: white;
+  padding: 10px 15px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.delete-btn:hover {
+  background: #ff2222;
+  box-shadow: 0 0 10px #ff4444aa;
+  transform: translateY(-2px);
+}
+
+/* PDF BUTTON */
+.pdf-btn {
+  background:  #00ffc355;
+  color: white;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: 0.3s ease;
+}
+
+.pdf-btn:hover {
+  box-shadow: 0 0 12px #0a84ffcc;
+  transform: translateY(-2px);
+}
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeIn 0.4s ease;
+  z-index: 1000;
+}
+
+.modal-box {
+  width: 400px;
+  background: #111;
+  padding: 25px;
+  border-radius: 18px;
+  animation: popIn 0.4s ease;
+  border: 1px solid #00ffc333;
+  box-shadow: 0 0 25px #00ffc322;
+}
+
+.modal-box input,
+.modal-box textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: 2px solid transparent;
+  background: rgba(255, 255, 255, 0.18);
+  color: white;
+  transition: 0.25s ease;
+}
+
+.modal-box input:focus,
+.modal-box textarea:focus {
+  border-color: #00ffc3;
+  box-shadow: 0 0 10px #00ffc388;
+}
+
+.add-submit {
+  background: #00ffc3;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  margin-top: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.add-submit:hover {
+  box-shadow: 0 0 12px #00ffc3bb;
+  transform: translateY(-2px);
+}
+
+.close-btn {
+  margin-top: 15px;
+  background: #ff4444;
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.close-btn:hover {
+  box-shadow: 0 0 12px #ff4444aa;
+  transform: translateY(-2px);
+}
+
+.add-msg {
+  color: #00ffc3;
+  margin-top: 10px;
+  font-size: 15px;
+  animation: fadeIn 0.5s ease;
+}
+
+/* ======================
+   ANIMATIONS
+====================== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+/* =====================================================
+   RESPONSIVE — MOBILE + TABLET + LAPTOP SUPPORT
+   (Safe to paste – does NOT break existing UI)
+===================================================== */
+
+/* 🔹 Medium screens (Tablets / small laptops) */
+@media (max-width: 1024px) {
+  .search-box,
+  .result-box,
+  .card,
+  .add-box,
+  .add-ingredient-box {
+    width: 85%;
+  }
+
+  .modal-box {
+    width: 350px;
+  }
+}
+
+/* 🔹 Mobile screens (Full responsive stacking) */
+@media (max-width: 768px) {
+  /* Center container elements */
+  .container {
+    padding: 30px 15px;
+  }
+
+  /* SEARCH BOX */
+  .search-box {
+    flex-direction: column;
+    width: 100%;
+    gap: 14px;
+  }
+
+  .search-box input {
+    width: 100%;
+  }
+
+  .search-box button {
+    width: 100%;
+    padding: 14px;
+  }
+
+  /* RESULT & CARD BOXES */
+  .result-box,
+  .card {
+    width: 95%;
+    padding: 18px;
+  }
+
+  .item {
+    padding: 14px;
+  }
+
+  .item img {
+    width: 160px;
+    height: 160px;
+  }
+
+  /* ADD INGREDIENT FORMS */
+  .add-box,
+  .add-ingredient-box {
+    width: 95%;
+    padding: 25px;
+  }
+
+  /* MODAL */
+  .modal-box {
+    width: 85%;
+    padding: 20px;
+  }
+
+  /* BUTTONS */
+  .pdf-btn,
+  .delete-btn,
+  .add-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* 🔹 Small mobile screens (≤480px) */
+@media (max-width: 480px) {
+  .search-box-wrapper {
+    margin-top: 30px;
+    padding: 10px;
+  }
+
+  .search-box input {
+    font-size: 15px;
+    padding: 12px;
+  }
+
+  .search-box button {
+    padding: 12px;
+    font-size: 15px;
+  }
+
+  .item img {
+    width: 130px;
+    height: 130px;
+  }
+
+  .modal-box {
+    width: 90%;
+  }
+}
